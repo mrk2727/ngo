@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | PMR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
+
+    <nav>
+        <div class="logo"><a href="index.html">PMR.</a></div>
+        <div class="nav-links">
+            <a href="about.html" class="active-page">About</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="music.html">Music</a>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <h1 class="fade-in" style="font-size: 4rem; margin-bottom: 50px;">THE <span style="color: var(--gold);">MISSION</span></h1>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+            <div class="fade-in delay-1">
+                <p style="font-size: 1.5rem; line-height: 1.6;">
+                    Peace Musick Records is an independent label and youth organization harnessing hip-hop culture for social change.
+                </p>
+            </div>
+            <div class="fade-in delay-2" style="border-left: 2px solid var(--gold); padding-left: 30px;">
+                <h3 style="color: var(--gold); margin-bottom: 10px;">CORE VALUES</h3>
+                <p style="color: #aaa; margin-bottom: 20px;">Creativity • Social Justice • Equality</p>
+                <p>We work with underground artists across India to build a platform for voices that address education, equality, and public health.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        });
+    </script>
+</body>
+</html>

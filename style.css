@@ -1,0 +1,260 @@
+/* --- style.css --- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;500&family=Oswald:wght@400;600&display=swap');
+
+:root {
+    --gold: #FFD700;
+    --black: #050505;
+    --dark-gray: #121212;
+    --text-white: #EAEAEA;
+    --text-muted: #888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+
+body {
+    background-color: var(--black);
+    color: var(--text-white);
+    font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- PREMIUM UI ELEMENTS --- */
+/* Custom Cursor */
+.cursor-dot, .cursor-outline {
+    position: fixed; top: 0; left: 0; transform: translate(-50%, -50%);
+    border-radius: 50%; z-index: 9999; pointer-events: none;
+}
+.cursor-dot { width: 8px; height: 8px; background-color: var(--gold); }
+.cursor-outline {
+    width: 40px; height: 40px; border: 1px solid rgba(255, 215, 0, 0.5);
+    transition: 0.2s;
+}
+
+/* Film Grain */
+.noise {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 9000; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography */
+h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; line-height: 1; }
+a { text-decoration: none; color: white; transition: 0.3s; }
+
+/* Navigation */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 5%; position: fixed; width: 100%; z-index: 1000;
+    mix-blend-mode: exclusion;
+}
+.logo { font-family: 'Oswald'; font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+.nav-links a { margin-left: 30px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
+.nav-links a:hover { color: var(--gold); }
+.active-page { border-bottom: 2px solid var(--gold); }
+
+/* Layouts */
+.page-container { padding: 150px 10%; min-height: 100vh; }
+.hero-title { font-size: 5rem; margin-bottom: 20px; }
+.outline-text { -webkit-text-stroke: 1px rgba(255,255,255,0.5); color: transparent; }
+
+/* Components */
+.btn {
+    padding: 15px 40px; border: 1px solid var(--gold); color: var(--gold);
+    text-transform: uppercase; letter-spacing: 2px; font-family: 'Oswald';
+    display: inline-block; margin-top: 30px;
+}
+.btn:hover { background: var(--gold); color: black; }
+
+/* Animation Classes */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 1s forwards; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }/* --- 1. FONTS & VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;500&family=Oswald:wght@400;600&display=swap');
+
+:root {
+    --gold: #FFD700;
+    --black: #050505;
+    --dark-gray: #111;
+    --text-white: #EAEAEA;
+    --text-muted: #888;
+    --easing: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none; /* Hides default cursor */
+}
+
+body {
+    background-color: var(--black);
+    color: var(--text-white);
+    font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* --- 2. PREMIUM TEXTURE (The "Old" Look) --- */
+.noise {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9000;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* --- 3. CUSTOM CURSOR --- */
+.cursor-dot {
+    position: fixed; top: 0; left: 0;
+    width: 8px; height: 8px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-outline {
+    position: fixed; top: 0; left: 0;
+    width: 40px; height: 40px;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* --- 4. TYPOGRAPHY --- */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: 1px;
+}
+
+h1 { font-size: 5rem; }
+h2 { font-size: 3rem; }
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+    transition: 0.5s;
+}
+
+a { text-decoration: none; color: white; transition: 0.3s; }
+
+/* --- 5. NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    mix-blend-mode: exclusion; /* This makes the text change color over white backgrounds */
+}
+
+.logo { font-family: 'Oswald'; font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; }
+.logo a { color: var(--text-white); }
+
+.nav-links a {
+    margin-left: 40px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 1px;
+    bottom: -5px; left: 0;
+    background-color: var(--gold);
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after, .active-page::after { width: 100%; }
+.nav-links a:hover { color: var(--gold); }
+
+/* --- 6. LAYOUT CONTAINERS --- */
+.page-container {
+    padding: 180px 8% 100px; /* Top padding clears the fixed nav */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- 7. BUTTONS (Slide Effect) --- */
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--text-white);
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    margin-top: 20px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 0%; height: 100%;
+    background: var(--gold);
+    z-index: -1;
+    transition: 0.4s var(--easing);
+}
+
+.btn:hover::before { width: 100%; }
+.btn:hover { color: black; border-color: var(--gold); }
+
+/* --- 8. ANIMATIONS --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s var(--easing) forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image/Video Containers */
+iframe {
+    width: 100%;
+    border: 1px solid #333;
+    transition: 0.3s;
+    filter: grayscale(100%);
+}
+
+iframe:hover {
+    filter: grayscale(0%);
+    border-color: var(--gold);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    h1 { font-size: 3.5rem; }
+    .page-container { padding: 120px 5%; }
+    .nav-links { display: none; } /* Hide menu on mobile for simplicity */
+    * { cursor: auto; } /* Normal cursor on touch screens */
+    .cursor-dot, .cursor-outline { display: none; }
+}
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }

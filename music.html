@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music | PMR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
+
+    <nav>
+        <div class="logo"><a href="index.html">PMR.</a></div>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="music.html" class="active-page">Music</a>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 class="fade-in">PMR PRODUCTIONS</h1>
+            <p class="fade-in delay-1" style="color: var(--gold);">VOICE OF THE STREETS</p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            
+            <div class="fade-in delay-2" style="background: #111; padding: 20px; width: 350px; border: 1px solid #222;">
+                <div style="height: 200px; background: #222; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #444;">
+                    [ARTIST IMAGE]
+                </div>
+                <h3>MC MONI</h3>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">Durga Nagri Rap Song</p>
+                <a href="#" style="color: var(--gold); font-size: 0.8rem; margin-top: 15px; display: block; letter-spacing: 1px;">LISTEN &rarr;</a>
+            </div>
+
+            <div class="fade-in delay-3" style="background: #111; padding: 20px; width: 350px; border: 1px solid #222;">
+                <div style="height: 200px; background: #222; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: #444;">
+                    [ARTIST IMAGE]
+                </div>
+                <h3>PRAFFUL</h3>
+                <p style="color: #666; font-size: 0.9rem; margin-top: 10px;">Underground Activist</p>
+                <a href="#" style="color: var(--gold); font-size: 0.8rem; margin-top: 15px; display: block; letter-spacing: 1px;">LISTEN &rarr;</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        });
+    </script>
+</body>
+</html>

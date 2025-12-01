@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peace Musick Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gel-light-blob"></div>
+    <div class="noise"></div>
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
+
+    <nav>
+        <div class="logo">PMR.</div>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="music.html">Music</a>
+        </div>
+    </nav>
+
+    <div class="page-container" style="display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div>
+            <h1 class="fade-in" style="font-size: 8vw;">PEACE MUSICK</h1>
+            <h1 class="fade-in delay-1 outline-text" style="font-size: 8vw;">RECORDS</h1>
+            <p class="fade-in delay-2" style="margin-top: 20px; letter-spacing: 4px; color: var(--gold);">EST. 2024 • INDIA'S FIRST HIP-HOP NGO</p>
+            
+            <div class="fade-in delay-3" style="margin-top: 50px; display: flex; gap: 20px; justify-content: center;">
+                <a href="campaigns.html" class="btn">Start The Change</a>
+                <a href="music.html" class="btn" style="border-color: #333; color: #fff;">Listen Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script for cursor (Inline for ease)
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        });
+    </script>
+</body>
+</html>
